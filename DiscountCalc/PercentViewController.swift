@@ -101,6 +101,14 @@ class PercentViewController: UIViewController {
         percentField.text = "0"
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as! ResultViewController
+        viewController.price = price
+        if let percent = Int(percentField.text!) {
+            viewController.percent = percent
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
